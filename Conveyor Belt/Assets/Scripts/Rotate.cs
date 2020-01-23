@@ -4,16 +4,19 @@ using UnityEngine;
 
 public class Rotate : MonoBehaviour
 {
-
+    public AudioSource rotation;
+   
     public float degreesPerSec;
     public bool Right = true;
-   
+  
     void Start()
     {
+        rotation = GetComponent<AudioSource>();
     }
 
     void Update()
     {
+        
         if (Right == true)
         {
             float rotAmount = -degreesPerSec * Time.deltaTime;

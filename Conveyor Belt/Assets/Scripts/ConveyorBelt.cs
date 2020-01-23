@@ -4,9 +4,21 @@ using UnityEngine;
 
 public class ConveyorBelt : MonoBehaviour
 {
+    public AudioSource objectCollision;
     public GameObject belt;
     public Transform endpoint;
     public float speed;
+
+
+    void Start()
+    {
+        objectCollision = GetComponent<AudioSource>();
+    }
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        objectCollision.Play();
+    }
+    
 
     void OnTriggerStay2D(Collider2D other)
     {
